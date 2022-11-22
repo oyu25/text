@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>ろくまる農業2022</title>
+        <title>ろくまる農業777</title>
 
 </head>
 
