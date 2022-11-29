@@ -36,7 +36,7 @@
 
     if ($staff_name == '' || $staff_pass == '' || $staff_pass !== $staff_pass2) {
         print '<form>';
-        print '<button type="button" onclick="history.back()戻る</button>';
+        print '<button type="button" onclick="history.back()">戻る</button>';
         print '</form>';
     } else {
         $staff_pass = md5($staff_pass);
