@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>ろくまる農業</title>
+        <title>個人情報</title>
 
 </head>
 
@@ -17,13 +17,13 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT name FROM mst_staff WHERE 1";
+        $sql = "SELECT name FROM kojin WHERE 1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
         $dbh = null;
 
-        print "スタッフ一覧<br/><br/>";
+        print "個人情報一覧<br/><br/>";
 
         print "<form method='post' action='staff_branch.php'>";
         while (true) {
