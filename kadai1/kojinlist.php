@@ -13,8 +13,8 @@
     try {
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
-        $password = "";
-        $dbh = new PDO($dsn, $user, $password);
+        $pass = "";
+        $dbh = new PDO("mysql:dbname=shop;host=localhost;charset=utf8", $user, $pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT name FROM kojin WHERE 1";

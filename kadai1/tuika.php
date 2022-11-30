@@ -30,7 +30,6 @@
         $staff_denwa = htmlspecialchars($staff_denwa, ENT_QUOTES, 'UTF-8');
         $staff_Emaile = htmlspecialchars($staff_Emaile, ENT_QUOTES, 'UTF-8');
 
-        //ここから P80
 
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
@@ -38,7 +37,7 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = "INSERT INTO kojin(shimei,hurigana,yubinbangou,jusho,denwabangou,emaire) VALUE(?,?,?,?,?,?)";
+        $sql = "INSERT INTO kojin(ID,shimei,hurigana,yubinbangou,jusho,denwabangou,emaire) VALUE(?,?,?,?,?,?,?)";
         $stmt = $dbh->prepare($sql);
         $data[] = $staff_name;
         $data[] = $staff_kanji;
