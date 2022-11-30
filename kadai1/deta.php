@@ -10,7 +10,7 @@
 <body>
   <?php
 
-  $staff_name = $_POST['name'];
+  // $staff_name = $_POST['name'];
   $staff_kanji = $_POST['kanji'];
   //$staff_ID = $_POST['ID'];
   $staff_hurigana = $_POST['hurigana'];
@@ -19,8 +19,8 @@
   $staff_denwa = $_POST['denwa'];
   $staff_Emaile = $_POST['Emaile'];
 
- // $staff_ID = htmlspecialchars($staff_ID, ENT_QUOTES, 'UTF-8');
-  $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
+  // $staff_ID = htmlspecialchars($staff_ID, ENT_QUOTES, 'UTF-8');
+  // $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
   $staff_kanji = htmlspecialchars($staff_kanji, ENT_QUOTES, 'UTF-8');
   $staff_hurigana = htmlspecialchars($staff_hurigana, ENT_QUOTES, 'UTF-8');
   $staff_yubin = htmlspecialchars($staff_yubin, ENT_QUOTES, 'UTF-8');
@@ -28,7 +28,7 @@
   $staff_denwa = htmlspecialchars($staff_denwa, ENT_QUOTES, 'UTF-8');
   $staff_Emaile = htmlspecialchars($staff_Emaile, ENT_QUOTES, 'UTF-8');
 
-  if ($staff_name == '') {
+  /*if ($staff_name == '') {
     print '個人情報<br/>';
   } else {
     print $staff_name;
@@ -36,7 +36,7 @@
   }
 
 
-  /*if ($staff_ID == '') {
+  if ($staff_ID == '') {
     print 'IDが入力されていません。<br/>';
   } else {
     print $staff_ID;
@@ -86,16 +86,16 @@
   }
 
 
-  if ($staff_name == "" || /*$staff_ID == '' ||*/ $staff_kanji == '' || $staff_hurigana == '' || $staff_yubin == '' || $staff_jusho == '' || $staff_denwa == '' || $staff_Emaile == '') {
+  if (/*$staff_name == "" || $staff_ID == '' ||*/$staff_kanji == '' || $staff_hurigana == '' || $staff_yubin == '' || $staff_jusho == '' || $staff_denwa == '' || $staff_Emaile == '') {
     print '<form>';
     print '<button type="button" onclick="history.back()">戻る</button>';
     print '</form>';
   } else {
 
+
     
-    $staff_name = md5($staff_name);
     print '<form method="post" action="tuika.php">';
-    print '<input type="hidden" name="name"value="' . $staff_name . '">';
+    // print '<input type="hidden" name="name"value="' . $staff_name . '">';
     //print '<input type="hidden" name="ID"value="' . $staff_ID . '">';
     print '<input type="hidden" name="kanji"value="' . $staff_kanji . '">';
     print '<input type="hidden" name="hurigana"value="' . $staff_hurigana . '">';

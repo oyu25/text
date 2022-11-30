@@ -11,9 +11,9 @@
   個人情報<br />
   <br />
   <form method="post" action="deta.php">
-    個人情報を入力してください。<br />
+    <!--個人情報を入力してください。<br />
     <input type="text" name="name" style="width: 200px;"> <br />
-    <!--IDを入力してください。<br />
+    IDを入力してください。<br />
     <input type="text" name="ID" style="width: 200px"><br /> -->
     氏名（漢字）を入力してください。<br />
     <input type="text" name="kanji" style="width: 200px"><br />

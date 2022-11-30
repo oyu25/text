@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>個人情報</title>
+        <title>追加</title>
 
 </head>
 
@@ -12,17 +12,15 @@
     <?php
 
     try {
-        $staff_name = $_POST['name'];
+        // $staff_name = $_POST['name'];
         $staff_kanji = $_POST['kanji'];
-        //$staff_ID = $_POST['ID'];
         $staff_hurigana = $_POST['hurigana'];
         $staff_yubin = $_POST['yubin'];
         $staff_jusho = $_POST['jusho'];
         $staff_denwa = $_POST['denwa'];
         $staff_Emaile = $_POST['Emaile'];
 
-        // $staff_ID = htmlspecialchars($staff_ID, ENT_QUOTES, 'UTF-8');
-        $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
+        // $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
         $staff_kanji = htmlspecialchars($staff_kanji, ENT_QUOTES, 'UTF-8');
         $staff_hurigana = htmlspecialchars($staff_hurigana, ENT_QUOTES, 'UTF-8');
         $staff_yubin = htmlspecialchars($staff_yubin, ENT_QUOTES, 'UTF-8');
@@ -37,11 +35,10 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = "INSERT INTO kojin(ID,shimei,hurigana,yubinbangou,jusho,denwabangou,emaire) VALUE(?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO kojin(shimei,hurigana,yubinbangou,jusho,denwabangou,emeiru) VALUE(?,?,?,?,?,?)";
         $stmt = $dbh->prepare($sql);
-        $data[] = $staff_name;
+        // $data[] = $staff_name;
         $data[] = $staff_kanji;
-        //$data[] =$staff_ID ;
         $data[] = $staff_hurigana;
         $data[] = $staff_yubin;
         $data[] = $staff_jusho;
@@ -51,15 +48,24 @@
 
         $dbh = null;
 
-        print $staff_name;
+        // print $staff_name;
         print $staff_kanji;
-        print $staff_ID;
+        print "<br/>";
+        // print $staff_ID;
         print $staff_hurigana;
+        print "<br/>";
         print $staff_yubin;
+        print "<br/>";
         print $staff_jusho;
+        print "<br/>";
         print $staff_denwa;
+        print "<br/>";
         print $staff_Emaile;
+        print "<br/>";
         print "を追加しました。<br\>";
+        print "<br/><br/>";
+       
+
     } catch (Exception $e) {
 
         print "ただいま障害により大変ご迷惑をおかけしております。";
@@ -67,8 +73,8 @@
         exit();
     }
     ?>
-
-    <a href="kojin.php">戻る</a>
+    <button type="button" onclick="history.back()" href=" kojinlist.php" >戻る</button>
+    <!-- <a href="kojin.php">戻る</a> -->
 
 
 
