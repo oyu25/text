@@ -36,6 +36,7 @@
     個人情報修正<br />
     <br />
     個人情報コード<br />
+
     <?php print $code; ?>
     <br />
     <br />
@@ -44,6 +45,7 @@
 
         個人情報を入力してください。<br />
         <!-- <input type="text" name="name" style="width: 200px;"> <br /> -->
+
         氏名（漢字）を入力してください。<br />
         <input type="text" name="kanji" style="width: 200px"><br />
         ふりがなを入力してください。<br />

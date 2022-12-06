@@ -30,12 +30,10 @@
         $denwa = htmlspecialchars($denwa, ENT_QUOTES, 'UTF-8');
         $Emaile = htmlspecialchars($Emaile, ENT_QUOTES, 'UTF-8');
 
-
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 
         $sql = "INSERT INTO kojin(simei,hurigana,yubinbangou,jushou,denwabangou,emeiru) VALUE(?,?,?,?,?,?)";
         $stmt = $dbh->prepare($sql);
@@ -46,6 +44,7 @@
         $data[] = $jusho;
         $data[] = $denwa;
         $data[] = $Emaile;
+
         $stmt->execute($data);
 
         $dbh = null;
@@ -73,7 +72,9 @@
         exit();
     }
     ?>
+
     <button type="button" onclick="history.back()" href=" kojinlist.php">戻る</button>
+
     <!-- <a href="kojin.php">戻る</a> -->
 
 

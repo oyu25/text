@@ -32,6 +32,7 @@
     print '個人情報<br/>';
   } else {
     print $name;
+
     print '<br/>';
   }
 

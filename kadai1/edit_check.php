@@ -92,14 +92,12 @@
     }
 
 
+
     if (/*$_name == "" || $ID == '' ||*/$kanji == '' || $hurigana == '' || $yubin == '' || $jusho == '' || $denwa == '' || $Emaile == '') {
         print '<form>';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '</form>';
     } else {
-
-
-
         print '<form method="post" action="edit_done.php">';
         // print '<input type="hidden" name="name"value="' . $name . '">';
         //print '<input type="hidden" name="ID"value="' . $ID . '">';
