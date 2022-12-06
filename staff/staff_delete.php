@@ -10,7 +10,7 @@
 <body>
     <?php
     try {
-        $staff_code = $_GET["staffcode"];
+        $code = $_GET["staffcode"];
 
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = "root";
@@ -20,11 +20,11 @@
 
         $sql = "SELECT name FROM mst_staff WHERE code=?";
         $stmt = $dbh->prepare($sql);
-        $data[] = $staff_code;
+        $data[] = $code;
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $staff_name = $rec["name"];
+        $name = $rec["name"];
 
         $dbh = null;
     } catch (Exception $e) {
@@ -36,15 +36,15 @@
     スタッフ削除<br />
     <br />
     スタッフコード<br />
-    <?php print $staff_code; ?>
+    <?php print $code; ?>
     <br />
     スタッフ名<br/>
-    <?php print $staff_name;?>
+    <?php print $name;?>
     <br/>
     このスタッフは削除してよろしいですか?<br/>
     <br />
-    <form method="post" action="staff_delete_done.php">
-        <input type="hidden" name="code" value="<?php print $staff_code ?>">
+    <form method="post" action="delete_done.php">
+        <input type="hidden" name="code" value="<?php print $code ?>">
         <button type="button" onclick="history.back()">戻る</button>
         <button type="submit">ＯＫ</button>
     </form>

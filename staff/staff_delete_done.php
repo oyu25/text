@@ -9,7 +9,7 @@
 <body>
     <?php
     try {
-        $staff_code = $_POST["code"];
+        $code = $_POST["code"];
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
         $password = "";
@@ -17,7 +17,7 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "DELETE FROM mst_staff WHERE code=?";
         $stmt = $dbh->prepare($sql);
-        $data[] = $staff_code;
+        $data[] = $code;
         $stmt->execute($data);
         $dbh = null;
     } catch (Exception $e) {
@@ -29,7 +29,7 @@
     削除しました。<br />
     <br />
 
-    <a href="staff_list.php">戻る</a>
+    <a href="list.php">戻る</a>
 
 
 
