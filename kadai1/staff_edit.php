@@ -8,23 +8,23 @@
 </head>
 
 <body>
-    
+ 
     <?php
     try {
-        $code = $_GET["staffcode"];
+        $code = $_GET["ID"];
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = "SELECT name FROM kojin WHERE code=?";
+        $sql = "SELECT ID FROM kojin WHERE ID=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $code;
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $name = $rec["kanji"];
+        $hurigana= $rec["ID"];
 
         $dbh = null;
     } catch (Exception $e) {
@@ -36,16 +36,14 @@
     個人情報修正<br />
     <br />
     個人情報コード<br />
-
     <?php print $code; ?>
     <br />
     <br />
-    <form method="post" action="edit_check.php">
+    <form method="post" action="staff_edit_check.php">
         <input type="hidden" name="code" value="<?php print $code; ?>">
 
         個人情報を入力してください。<br />
         <!-- <input type="text" name="name" style="width: 200px;"> <br /> -->
-
         氏名（漢字）を入力してください。<br />
         <input type="text" name="kanji" style="width: 200px"><br />
         ふりがなを入力してください。<br />

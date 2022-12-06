@@ -16,7 +16,8 @@
         $user = "root";
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT ID, simei,hurigana name FROM kojin WHERE 1";
+
+        $sql = "SELECT ID,simei,hurigana name FROM kojin WHERE 1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -24,17 +25,19 @@
 
         print "個人情報一覧<br/><br/>";
 
-        print "<form method='post' action='shusei.php'>";
+        print "<form method='post' action='staff_edit.php'>";
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="ID"name="simei"name="hurigana" value="' . $rec['ID'] . '"value="' . $rec['simei'] . '"value="' . $rec['hurigana'] . '">';
+            print '<input type="radio" name="ID" value="' . $rec['ID'] . '">';
             print $rec["ID"];
+            print "</br>";
             print $rec["simei"];
-            print $rec["hurigana"];
+            print "<br/>";
+            //print $rec["hurigana"];
             print "<br/>";
         }
         // print '<button type="submit" name="disp">参照</button>';

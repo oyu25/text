@@ -10,7 +10,7 @@
 <body>
   個人情報<br />
   <br />
-  <form method="post" action="deta.php">
+  <form method="post" action="staff_add_check.php">
     <!--個人情報を入力してください。<br />
     <input type="text" name="name" style="width: 200px;"> <br />
     IDを入力してください。<br />
