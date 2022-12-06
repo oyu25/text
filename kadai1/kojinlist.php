@@ -16,7 +16,7 @@
         $user = "root";
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT code,name FROM kojin WHERE 1";
+        $sql = "SELECT ID, simei,hurigana name FROM kojin WHERE 1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -31,8 +31,10 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="staffcode" value="' . $rec['code'] . '">';
-            print $rec["kanji"];
+            print '<input type="radio" name="ID"name="simei"name="hurigana" value="' . $rec['ID'] . '"value="' . $rec['simei'] . '"value="' . $rec['hurigana'] . '">';
+            print $rec["ID"];
+            print $rec["simei"];
+            print $rec["hurigana"];
             print "<br/>";
         }
         // print '<button type="submit" name="disp">参照</button>';

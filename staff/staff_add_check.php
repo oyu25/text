@@ -10,39 +10,39 @@
 <body>
     <?php
 
-    $staff_name = $_POST['name'];
-    $staff_pass = $_POST['pass'];
-    $staff_pass2 = $_POST['pass2'];
+    $name = $_POST['name'];
+    $pass = $_POST['pass'];
+    $pass2 = $_POST['pass2'];
 
-    $staff_name = htmlspecialchars($staff_name, ENT_QUOTES, 'UTF-8');
-    $staff_pass = htmlspecialchars($staff_pass, ENT_QUOTES, 'UTF-8');
-    $staff_pass2 = htmlspecialchars($staff_pass2, ENT_QUOTES, 'UTF-8');
+    $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    $pass = htmlspecialchars($pass, ENT_QUOTES, 'UTF-8');
+    $pass2 = htmlspecialchars($pass2, ENT_QUOTES, 'UTF-8');
 
-    if ($staff_name == '') {
+    if ($name == '') {
         print 'スタッフ名が入力されていません。<br/>';
     } else {
         print 'スタッフ名:';
-        print $staff_name;
+        print $name;
         print '<br/>';
     }
 
-    if ($staff_pass == '') {
+    if ($pass == '') {
         print 'パスワードが入力されていません。<br/>';
     }
 
-    if ($staff_pass != $staff_pass2) {
+    if ($pass != $pass2) {
         print 'パスワードが一致しません。<br/>';
     }
 
-    if ($staff_name == '' || $staff_pass == '' || $staff_pass !== $staff_pass2) {
+    if ($name == '' || $pass == '' || $pass !== $pass2) {
         print '<form>';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '</form>';
     } else {
-        $staff_pass = md5($staff_pass);
-        print '<form method="post" action="staff_add_done.php">';
-        print '<input type="hidden" name="name"value="' . $staff_name . '">';
-        print '<input type="hidden" name="pass"value="' . $staff_pass . '">';
+        $pass = md5($pass);
+        print '<form method="post" action="add_done.php">';
+        print '<input type="hidden" name="name"value="' . $name . '">';
+        print '<input type="hidden" name="pass"value="' . $pass . '">';
         print '<br/>';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '<button type="submit">ＯＫ</button>';

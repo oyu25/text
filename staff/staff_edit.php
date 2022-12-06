@@ -10,7 +10,7 @@
 <body>
     <?php
     try {
-        $staff_code = $_GET["staffcode"];
+        $code = $_GET["staffcode"];
 
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = "root";
@@ -20,11 +20,11 @@
 
         $sql = "SELECT name FROM mst_staff WHERE code=?";
         $stmt = $dbh->prepare($sql);
-        $data[] = $staff_code;
+        $data[] = $code;
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $staff_name = $rec["name"];
+        $name = $rec["name"];
 
         $dbh = null;
     } catch (Exception $e) {
@@ -36,13 +36,13 @@
     スタッフ修正<br />
     <br />
     スタッフコード<br />
-    <?php print $staff_code; ?>
+    <?php print $code; ?>
     <br />
     <br />
-    <form method="post" action="staff_edit_check.php">
-        <input type="hidden" name="code" value="<?php print $staff_code; ?>">
+    <form method="post" action="edit_check.php">
+        <input type="hidden" name="code" value="<?php print $code; ?>">
         スタッフ名<br />
-        <input type="text" name="name" style="width:200px" value="<?php print $staff_name; ?>"><br />
+        <input type="text" name="name" style="width:200px" value="<?php print $name; ?>"><br />
 
         パスワードを入力してください。<br />
         <input type="password" name="pass" style="width:100px"><br />

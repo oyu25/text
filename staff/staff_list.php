@@ -25,7 +25,7 @@
 
         print "スタッフ一覧<br/><br/>";
 
-        print "<form method='post' action='staff_branch.php'>";
+        print "<form method='post' action='branch.php'>";
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 

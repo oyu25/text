@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2022-11-22 05:42:44
+-- 生成日時: 2022-12-06 05:22:15
 -- サーバのバージョン： 10.4.25-MariaDB
 -- PHP のバージョン: 7.4.30
 
@@ -37,49 +37,15 @@ CREATE TABLE `kojin` (
   `emeiru` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- テーブルの構造 `mst_staff`
+-- テーブルのデータのダンプ `kojin`
 --
 
-CREATE TABLE `mst_staff` (
-  `code` int(11) NOT NULL,
-  `name` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- テーブルのデータのダンプ `mst_staff`
---
-
-INSERT INTO `mst_staff` (`code`, `name`, `password`) VALUES
-(1, 'ろくまる', '1234567890123457890123456789012'),
-(2, '無名', '3691308f2a4c2f6983f2880d32e29c84'),
-(3, '無名２', '4124bc0a9335c27f086f24ba207a4912'),
-(4, '無名3', '4124bc0a9335c27f086f24ba207a4912'),
-(6, 'スタッフ', '4124bc0a9335c27f086f24ba207a4912'),
-(7, 'ほげ', '4124bc0a9335c27f086f24ba207a4912');
-
---
--- ダンプしたテーブルのインデックス
---
-
---
--- テーブルのインデックス `mst_staff`
---
-ALTER TABLE `mst_staff`
-  ADD PRIMARY KEY (`code`);
-
---
--- ダンプしたテーブルの AUTO_INCREMENT
---
-
---
--- テーブルの AUTO_INCREMENT `mst_staff`
---
-ALTER TABLE `mst_staff`
-  MODIFY `code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+INSERT INTO `kojin` (`ID`, `simei`, `hurigana`, `yubinbangou`, `jushou`, `denwabangou`, `emeiru`) VALUES
+(0, '不明', 'おうみ', '000000', '不明', '不明', '220348@jc-21.jp'),
+(0, '不明', 'おうみ', '000000', '不明', '不明', '220348@jc-21.jp'),
+(0, '不明', 'おうみ', '000000', '不明', '不明', '220348@jc-21.jp'),
+(0, '不明', 'おうみ', '000000', '不明', '不明', '220348@jc-21.jp');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
