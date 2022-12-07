@@ -8,13 +8,13 @@
 </head>
 
 <body>
-<!-- ここからp89 -->
+
     <?php
 
     try {
         // $name = $_POST['name'];
         $kanji = $_POST['kanji'];
-        $code = $_POST['code'];
+        // $code = $_POST['code'];
         //$ID = $_POST['ID'];
         $hurigana = $_POST['hurigana'];
         $yubin = $_POST['yubin'];
@@ -45,30 +45,14 @@
         $data[] = $jusho;
         $data[] = $denwa;
         $data[] = $Emaile;
+        $data[] = $staff_ID;
 
         $stmt->execute($data);
 
         $dbh = null;
-
-        // print $name;
-        print $kanji;
-        print "<br/>";
-        // print $ID;
-        print $hurigana;
-        print "<br/>";
-        print $yubin;
-        print "<br/>";
-        print $jusho;
-        print "<br/>";
-        print $denwa;
-        print "<br/>";
-        print $Emaile;
-        print "<br/>";
-        print "を追加しました。<br\>";
-        print "<br/><br/>";
     } catch (Exception $e) {
 
-        print "ただいま障害により大変ご迷惑をおかけしております。";
+        print "修正しました。";
         print $e->getMessage();
         exit();
     }

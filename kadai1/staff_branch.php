@@ -11,12 +11,14 @@
     <?php
 
     if (isset($_POST["disp"]) == true) {
-        if (isset($_POST["staffcode"]) == false) {
+        if (isset($_POST["ID"]) == false) {
+
+
             header("Location:ng.php");
             exit();
         }
-        $code = $_POST["staffcode"];
-        header("Location:disp.php?staffcode=" . $code);
+        $staff_ID = $_POST["ID"];
+        header("Location:disp.php?ID=" . $staff_ID);
         exit();
     }
 
@@ -26,24 +28,24 @@
     if (isset($_POST["edit"]) == true) {
         // print"修正ボタンが押されました。";
 
-        if (isset($_POST["staffcode"]) == false) {
+        if (isset($_POST["ID"]) == false) {
             header("Location:ng.php");
             exit();
         }
-        $code = $_POST["staffcode"];
-        header("Location:edit.php?staffcode=" . $code);
+        $staff_ID = $_POST["ID"];
+        header("Location:edit.php?ID=" . $staff_ID);
         exit();
     }
 
     if (isset($_POST["delete"]) == true) {
         // print"削除ボタンが押されました。";
 
-        if (isset($_POST["staffcode"]) == false) {
+        if (isset($_POST["ID"]) == false) {
             header("Location:ng.php");
             exit();
         }
-        $code = $_POST["staffcode"];
-        header("Location:delete.php?staffcode=" . $code);
+        $staff_ID = $_POST["ID"];
+        header("Location:delete.php?ID=" . $staff_ID);
         exit();
     }
     ?>

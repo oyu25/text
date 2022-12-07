@@ -18,6 +18,7 @@
   $jusho = $_POST['jusho'];
   $denwa = $_POST['denwa'];
   $Emaile = $_POST['Emaile'];
+ 
 
   // $ID = htmlspecialchars(ID, ENT_QUOTES, 'UTF-8');
   // $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
@@ -98,6 +99,7 @@
     print '<form method="post" action="staff_add_done.php">';
     // print '<input type="hidden" name="name"value="' . $name . '">';
     //print '<input type="hidden" name="ID"value="' . $ID . '">';
+    // print '<input type="hidden" name="code"value="' . $code . '">';
     print '<input type="hidden" name="kanji"value="' . $kanji . '">';
     print '<input type="hidden" name="hurigana"value="' . $hurigana . '">';
     print '<input type="hidden" name="yubin"value="' . $yubin . '">';

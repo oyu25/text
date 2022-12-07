@@ -11,20 +11,26 @@
  
     <?php
     try {
-        $code = $_GET["ID"];
+        $staff_ID = $_GET["ID"];
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = "SELECT ID FROM kojin WHERE ID=?";
+        $sql = "SELECT simei,hurigana,yubinbangou,jushou,denwabangou,emeiru FROM kojin WHERE ID=?";
         $stmt = $dbh->prepare($sql);
-        $data[] = $code;
+        $data[] = $staff_ID;
         $stmt->execute($data);
 
-        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $hurigana= $rec["ID"];
+        // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $staff_simei=$rec['simei'];
+        // $staff_hurigana=$rec['hurigana'];
+        // $staff_yubinbangou=$rec['yubinbangou'];
+        // $staff_jushou=$rec['jushou'];
+        // $staff_denwabangou=$rec['denwabangou'];
+        // $staff_emeiru=$rec['emeiru'];
+         
 
         $dbh = null;
     } catch (Exception $e) {
@@ -36,7 +42,7 @@
     個人情報修正<br />
     <br />
     個人情報コード<br />
-    <?php print $code; ?>
+    <?php print $staff_ID; ?>
     <br />
     <br />
     <form method="post" action="staff_edit_check.php">

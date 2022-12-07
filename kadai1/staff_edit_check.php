@@ -18,7 +18,7 @@
   $jusho = $_POST['jusho'];
   $denwa = $_POST['denwa'];
   $Emaile = $_POST['Emaile'];
-  $code = $_POST['code'];
+  $staff_ID = $_POST['code'];
 
   // $ID = htmlspecialchars(ID, ENT_QUOTES, 'UTF-8');
   // $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
@@ -99,7 +99,7 @@
     print '<form method="post" action="staff_edit_done.php">';
     // print '<input type="hidden" name="name"value="' . $name . '">';
     //print '<input type="hidden" name="ID"value="' . $ID . '">';
-    print '<input type="hidden" name="code"value="' . $code . '">';
+    print '<input type="hidden" name="code"value="' . $staff_ID . '">';
     print '<input type="hidden" name="kanji"value="' . $kanji . '">';
     print '<input type="hidden" name="hurigana"value="' . $hurigana . '">';
     print '<input type="hidden" name="yubin"value="' . $yubin . '">';

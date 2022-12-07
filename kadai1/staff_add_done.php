@@ -14,6 +14,7 @@
     try {
         // $name = $_POST['name'];
         $kanji = $_POST['kanji'];
+        // $code = $_POST['code'];
         //$ID = $_POST['ID'];
         $hurigana = $_POST['hurigana'];
         $yubin = $_POST['yubin'];
