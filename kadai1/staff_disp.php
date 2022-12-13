@@ -23,13 +23,13 @@
     $data[] = $staff_ID;
     $stmt->execute($data);
 
-    // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-    // $staff_simei=$rec['simei'];
-    // $staff_hurigana=$rec['hurigana'];
-    // $staff_yubinbangou=$rec['yubinbangou'];
-    // $staff_jushou=$rec['jushou'];
-    // $staff_denwabangou=$rec['denwabangou'];
-    // $staff_emeiru=$rec['emeiru'];
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    $simei = $rec['simei'];
+    $hurigana = $rec['hurigana'];
+    $yubinbangou = $rec['yubinbangou'];
+    $jushou = $rec['jushou'];
+    $denwabangou = $rec['denwabangou'];
+    $emeiru = $rec['emeiru'];
 
 
     $dbh = null;
@@ -43,7 +43,21 @@
   <br />
   スタッフコード<br />
   <?php print $staff_ID;
+  echo "<br/>";
+  print $simei;
+  echo "<br/>";
+  print $hurigana;
+  echo "<br/>";
+  print $yubinbangou;
+  echo "<br/>";
+  print $jushou;
+  echo "<br/>";
+  print $denwabangou;
+  echo "<br/>";
+  print  $emeiru;
   ?>
+
+
   <br />
   <br />
   <form>

@@ -15,7 +15,7 @@
         // $name = $_POST['name'];
         $kanji = $_POST['kanji'];
         // $code = $_POST['code'];
-        //$ID = $_POST['ID'];
+        $staff_ID = $_POST['ID'];
         $hurigana = $_POST['hurigana'];
         $yubin = $_POST['yubin'];
         $jusho = $_POST['jusho'];
@@ -36,7 +36,7 @@
         $dbh = new PDO($dsn, $user);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "INSERT INTO kojin(simei,hurigana,yubinbangou,jushou,denwabangou,emeiru) VALUE(?,?,?,?,?,?)";
+        $sql = "UPDATE kojin SET simei=?,hurigana=?,yubinbangou=?,jushou=?,denwabangou=?,emeiru=? WHERE ID=?";
         $stmt = $dbh->prepare($sql);
         // $data[] = $name;
         $data[] = $kanji;
@@ -45,21 +45,19 @@
         $data[] = $jusho;
         $data[] = $denwa;
         $data[] = $Emaile;
-        // $data[] = $staff_ID;
+        $data[] = $staff_ID;
 
         $stmt->execute($data);
 
         $dbh = null;
     } catch (Exception $e) {
-
-        print "修正しました。";
         print $e->getMessage();
-        exit();
     }
     ?>
 
     <!-- <button type="button" onclick="history.back()" href=" staff_list.php">戻る</button> -->
-
+    修正しました。<br />
+    <br />
     <a href="staff_list.php">戻る</a>
 
 

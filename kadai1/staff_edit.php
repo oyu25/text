@@ -46,7 +46,7 @@
     <br />
     <br />
     <form method="post" action="staff_edit_check.php">
-        <input type="hidden" name="code" value="<?php print $code; ?>">
+        <input type="hidden" name="code" value="<?php print $staff_ID; ?>">
 
         個人情報を入力してください。<br />
         <!-- <input type="text" name="name" style="width: 200px;"> <br /> -->

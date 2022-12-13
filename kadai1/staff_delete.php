@@ -47,7 +47,7 @@
     この個人情報を削除してもよろしいですか？</br>
     <br />
     <form method="post" action="staff_delete_done.php">
-        <input type="hidden" name="code" value="<?php print $code; ?>">
+        <input type="hidden" name="code" value="<?php print $staff_ID; ?>">
         <input type="button" onclick="history.back()" value="戻る">
         <button type="submit">ＯＫ</button>
     </form>
