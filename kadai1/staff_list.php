@@ -36,7 +36,7 @@
             print $rec["ID"];
             print $rec["simei"];
             print "<br/>";
-            // print $rec["hurigana"];
+            print $rec["hurigana"];
             print "<br/>";
         }
         print '<button type="submit" name="disp">個人表示</button>';

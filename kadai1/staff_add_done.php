@@ -74,9 +74,9 @@
     }
     ?>
 
-    <button type="button" onclick="history.back()" href=" staff_list.php">戻る</button>
+    <!-- <button type="button" onclick="history.back()" href=" staff_list.php">戻る</button> -->
 
-    <!-- <a href="kojin.php">戻る</a> -->
+    <a href="staff_list.php">戻る</a>
 
 
 

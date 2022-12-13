@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>追加</title>
+        <title>修正</title>
 
 </head>
 
@@ -45,7 +45,7 @@
         $data[] = $jusho;
         $data[] = $denwa;
         $data[] = $Emaile;
-        $data[] = $staff_ID;
+        // $data[] = $staff_ID;
 
         $stmt->execute($data);
 
@@ -58,9 +58,9 @@
     }
     ?>
 
-    <button type="button" onclick="history.back()" href=" staff_list.php">戻る</button>
+    <!-- <button type="button" onclick="history.back()" href=" staff_list.php">戻る</button> -->
 
-    <!-- <a href="kojin.php">戻る</a> -->
+    <a href="staff_list.php">戻る</a>
 
 
 

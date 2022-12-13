@@ -3,7 +3,7 @@
 
 <head>
   <mate charset="utf-8">
-    <title>個人情報1</title>
+    <title>個人情報</title>
 
 </head>
 

@@ -14,26 +14,26 @@
         if (isset($_POST["ID"]) == false) {
 
 
-            header("Location:ng.php");
+            header("Location:staff_ng.php");
             exit();
         }
         $staff_ID = $_POST["ID"];
-        header("Location:disp.php?ID=" . $staff_ID);
+        header("Location:staff_disp.php?ID=" . $staff_ID);
         exit();
     }
 
     if (isset($_POST["add"]) == true) {
-        header("Location:add.php");
+        header("Location:staff_add.php");
     }
     if (isset($_POST["edit"]) == true) {
         // print"修正ボタンが押されました。";
 
         if (isset($_POST["ID"]) == false) {
-            header("Location:ng.php");
+            header("Location:staff_ng.php");
             exit();
         }
         $staff_ID = $_POST["ID"];
-        header("Location:edit.php?ID=" . $staff_ID);
+        header("Location:staff_edit.php?ID=" . $staff_ID);
         exit();
     }
 
@@ -41,11 +41,11 @@
         // print"削除ボタンが押されました。";
 
         if (isset($_POST["ID"]) == false) {
-            header("Location:ng.php");
+            header("Location:staff_ng.php");
             exit();
         }
         $staff_ID = $_POST["ID"];
-        header("Location:delete.php?ID=" . $staff_ID);
+        header("Location:staff_delete.php?ID=" . $staff_ID);
         exit();
     }
     ?>
