@@ -17,7 +17,7 @@
             header("Location:pro_ng.php");
             exit();
         }
-        $code = $_POST["procode"];
+        $pro_code = $_POST["procode"];
         header("Location:pro_disp.php?procode=" . $pro_code);
         exit();
     }
