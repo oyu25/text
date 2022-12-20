@@ -32,8 +32,9 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="prode" value="' . $rec['code'] . '">';
-            print $rec["name"];
+            print '<input type="radio" name="procode" value="' . $rec['code'] . '">';
+            print $rec["name"].'---';
+            print $rec['price'].'円';
             print "<br/>";
         }
         print'<button type="submit" name="disp">参照</button>';

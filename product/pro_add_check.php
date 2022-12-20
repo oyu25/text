@@ -40,8 +40,8 @@ if ($pro_name == '' || preg_match('/\A[0-9]+\z/', $pro_price) == 0) {
   print '<input type="hidden" name="name" value="' . $pro_name . '">';
   print '<input type="hidden" name="price" value="' . $pro_price . '">';
   print '<br/>';
-  print '<button type="button" onclick="history.back()" value="戻る">';
-  print '<button type="submit">ＯＫ</button>';
+  print '<button type="button" onclick="history.back()">戻る</button>';
+  print '<button type="submit">OK</button>';
   print '</form>';
 }
 ?>
