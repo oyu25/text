@@ -18,13 +18,13 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT name FROM mst_product WHERE code=?";
+        $sql = "SELECT name,gazou FROM mst_product WHERE code=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $pro_code;
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $pro_name = $rec["name"];
+        $pro_name = $rec['name'];
         $pro_gazou_name=$rec['gazou'];
 
         $dbh = null;
@@ -54,7 +54,7 @@
     この商品は削除してよろしいですか?<br/>
     <br />
     <form method="post" action="pro_delete_done.php">
-        <input type="hidden" name="code" value="<?php print $pro_code ?>">
+        <input type="hidden" name="code" value="<?php print $pro_code; ?>">
         <input type="hidden" name="gazou_name" value="<?php print $pro_gazou_name;?>">
         <button type="button" onclick="history.back()">戻る</button>
         <button type="submit">ＯＫ</button>

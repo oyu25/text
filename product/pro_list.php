@@ -23,7 +23,7 @@
 
         $dbh = null;
 
-        print "商品一覧一覧<br/><br/>";
+        print "商品一覧<br/><br/>";
 
         print "<form method='post' action='pro_branch.php'>";
         while (true) {
