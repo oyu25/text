@@ -31,7 +31,7 @@ CREATE TABLE `mst_product` (
   `code` int(11) NOT NULL,
   `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
-  `gazou` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `file` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

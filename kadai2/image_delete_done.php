@@ -10,20 +10,20 @@
     <?php
     try {
         $image_code = $_POST["code"];
-        $image_gazou_name = $_POST['gazou_name'];
+        $image_file_name = $_POST['file_name'];
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
         $password = "";
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM mst_product WHERE code=?";
+        $sql = "DELETE FROM image WHERE code=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $image_code;
         $stmt->execute($data);
         $dbh = null;
 
-        if ($image_gazou_name != '') {
-            unlink('./gazou/' . $image_gazou_name);
+        if ($image_file_name != '') {
+            unlink('./file/' . $image_file_name);
         }
     } catch (Exception $e) {
 

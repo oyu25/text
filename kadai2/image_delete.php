@@ -18,21 +18,21 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT name,gazou FROM mst_product WHERE code=?";
+        $sql = "SELECT title,file FROM image WHERE code=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $image_code;
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $image_title = $rec['name'];
-        $image_gazou_name=$rec['gazou'];
+        $image_title = $rec['title'];
+        $image_file_name=$rec['file'];
 
         $dbh = null;
 
-        if($image_gazou_name==''){
-            $disp_gazou='';
+        if($image_file_name==''){
+            $disp_file='';
         }else{
-            $disp_gazou='<img src="./gazou/'.$image_gazou_name.'">';
+            $disp_file='<img src="./file/'.$image_file_name.'">';
         }
 
     } catch (Exception $e) {
@@ -49,13 +49,13 @@
     商品名<br/>
     <?php print $image_title;?>
     <br/>
-    <?php print $disp_gazou;?>
+    <?php print $disp_file;?>
     <br/>
     この商品は削除してよろしいですか?<br/>
     <br />
     <form method="post" action="image_delete_done.php">
         <input type="hidden" name="code" value="<?php print $image_code; ?>">
-        <input type="hidden" name="gazou_name" value="<?php print $image_gazou_name;?>">
+        <input type="hidden" name="file_name" value="<?php print $image_file_name;?>">
         <button type="button" onclick="history.back()">戻る</button>
         <button type="submit">ＯＫ</button>
     </form>

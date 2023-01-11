@@ -10,7 +10,7 @@
 
 $image_title = $_POST['title'];
 $image_description = $_POST['description'];
-// $image_gazou = $_FILES['gazou'];
+$image_file = $_FILES['file'];
 
 $image_title = htmlspecialchars($image_title, ENT_QUOTES, 'UTF-8');
 $image_description = htmlspecialchars($image_description, ENT_QUOTES, 'UTF-8');
@@ -31,17 +31,17 @@ if (preg_match('/\A[0-9]+\z/', $image_description) == 0) {
   print '<br/>';
 }
 
-// if ($image_gazou['size'] > 0) {
-//   if ($image_gazou['size'] > 1000000) {
-//     print '画像が大きすぎます';
-//   } else {
-//     move_uploaded_file($image_gazou['tmp_name'], './gazou/' . $image_gazou['name']);
-//     print '<img src="./gazou/' . $image_gazou['name'] . '">';
-//     print '<br/>';
-//   }
-// }
+if ($image_file['size'] > 0) {
+  if ($image_file['size'] > 1000000) {
+    print '画像が大きすぎます';
+  } else {
+    move_uploaded_file($image_file['tmp_name'], './file/' . $image_file['name']);
+    print '<img src="./file/' . $image_file['name'] . '">';
+    print '<br/>';
+  }
+}
 
-if ($image_title == '' || preg_match('/\A[0-9]+\z/', $image_description) == 0 || $image_gazou['size'] > 1000000) {
+if ($image_title == '' || preg_match('/\A[0-9]+\z/', $image_description) == 0 || $image_file['size'] > 1000000) {
   print '<form>';
   print '<button type="button" onclick="history.back()">戻る</button>';
   print '</form>';
@@ -50,7 +50,7 @@ if ($image_title == '' || preg_match('/\A[0-9]+\z/', $image_description) == 0 ||
   print '<form method="post" action="image_add_done.php">';
   print '<input type="hidden" name="title" value="' . $image_title . '">';
   print '<input type="hidden" name="description" value="' . $image_description . '">';
-  // print '<input type="hidden" name="gazou_name" value="' . $image_gazou['name'] . '">';
+  print '<input type="hidden" name="file_name" value="' . $image_file['name'] . '">';
   print '<br/>';
   print '<button type="button" onclick="history.back()">戻る</button>';
   print '<button type="submit">OK</button>';

@@ -15,7 +15,7 @@
 
         $image_title = $_POST["title"];
         $image_description = $_POST["description"];
-        $image_gazou_name = $_POST['gazou_name'];
+        $image_file_name = $_POST['file_name'];
 
         $image_title = htmlspecialchars($image_title, ENT_QUOTES, "UTF-8");
         $image_description = htmlspecialchars($image_description, ENT_QUOTES, "UTF-8");
@@ -31,7 +31,7 @@
         $stmt = $dbh->prepare($sql);
         $data[] = $image_title;
         $data[] = $image_description;
-        $data[] = $image_gazou_name;
+        $data[] = $image_file_name;
         $stmt->execute($data);
 
         $dbh = null;

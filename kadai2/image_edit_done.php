@@ -14,10 +14,10 @@
     try {
 
         $image_code = $_POST['code'];
-        $image_title = $_POST["name"];
-        $image_description = $_POST["price"];
-        $image_gazou_name_old = $_POST['gazou_name_old'];
-        $image_gazou_name = $_POST['gazou_name'];
+        $image_title = $_POST["title"];
+        $image_description = $_POST["description"];
+        $image_file_name_old = $_POST['file_name_old'];
+        $image_file_name = $_POST['file_name'];
 
         $image_code = htmlspecialchars($image_code, ENT_QUOTES, "UTF-8");
         $image_title = htmlspecialchars($image_title, ENT_QUOTES, "UTF-8");
@@ -30,20 +30,20 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = 'UPDATE mst_product SET name=?,price=?,gazou=? WHERE code=?';
+        $sql = 'UPDATE image SET title=?,description=?,file=? WHERE code=?';
         $stmt = $dbh->prepare($sql);
         $data[] = $image_title;
         $data[] = $image_description;
-        $data[] = $image_gazou_name;
+        $data[] = $image_file_name;
         $data[] = $image_code;
         $stmt->execute($data);
 
-        if ($image_gazou_name_old != $image_gazou_name) {
+        if ($image_file_name_old != $image_file_name) {
 
             $dbh = null;
 
-            if ($image_gazou_name_old != '') {
-                unlink('./gazou/' . $image_gazou_name_old);
+            if ($image_file_name_old != '') {
+                unlink('./file/' . $image_file_name_old);
             }
         }
         print "修正しました。<br\>";

@@ -14,7 +14,7 @@
         画像の説明
         <input type="text" name="description" style="width:200px;"></br>
         画像ファイルの選択
-        <input type="file" name="gazou" style="width: 400px"></br>
+        <input type="file" name="file" style="width: 400px"></br>
 
         <button type="button" onclick="history.back()">戻る</button>
         <button type="submit">ＯＫ</button>
