@@ -14,26 +14,26 @@
         if (isset($_POST["procode"]) == false) {
 
 
-            header("Location:pro_ng.php");
+            header("Location:image_ng.php");
             exit();
         }
-        $pro_code = $_POST["procode"];
-        header("Location:pro_disp.php?procode=" . $pro_code);
+        $image_code = $_POST["procode"];
+        header("Location:image_disp.php?procode=" . $image_code);
         exit();
     }
 
     if (isset($_POST["add"]) == true) {
-        header("Location:pro_add.php");
+        header("Location:image_add.php");
     }
     if (isset($_POST["edit"]) == true) {
         // print"修正ボタンが押されました。";
 
         if (isset($_POST["procode"]) == false) {
-            header("Location:pro_ng.php");
+            header("Location:image_ng.php");
             exit();
         }
-        $pro_code = $_POST["procode"];
-        header("Location:pro_edit.php?procode=" . $pro_code);
+        $image_code = $_POST["procode"];
+        header("Location:image_edit.php?procode=" . $image_code);
         exit();
     }
 
@@ -41,11 +41,11 @@
         // print"削除ボタンが押されました。";
 
         if (isset($_POST["procode"]) == false) {
-            header("Location:pro_ng.php");
+            header("Location:image_ng.php");
             exit();
         }
-        $pro_code = $_POST["procode"];
-        header("Location:pro_delete.php?procode=" . $pro_code);
+        $image_code = $_POST["procode"];
+        header("Location:image_delete.php?procode=" . $image_code);
         exit();
     }
     ?>

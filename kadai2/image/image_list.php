@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>ろくまる農業</title>
+        <title>課題２</title>
 
 </head>
 
@@ -17,15 +17,13 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT code,name,price FROM mst_product WHERE 1";
+        $sql = "SELECT id,title,description FROM image WHERE 1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
         $dbh = null;
 
-        print "商品一覧<br/><br/>";
-
-        print "<form method='post' action='pro_branch.php'>";
+              print "<form method='post' action='image_branch.php'>";
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -34,7 +32,7 @@
             }
             print '<input type="radio" name="procode" value="' . $rec['code'] . '">';
             print $rec["name"].'---';
-            print $rec['price'].'円';
+            print $rec['description'];
             print "<br/>";
         }
         print'<button type="submit" name="disp">参照</button>';
