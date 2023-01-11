@@ -30,14 +30,13 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="procode" value="' . $rec['code'] . '">';
-            print $rec["name"].'---';
+            print '<input type="radio" name="imagecode" value="' . $rec['code'] . '">';
+            print $rec["title"].'---';
             print $rec['description'];
             print "<br/>";
         }
         print'<button type="submit" name="disp">参照</button>';
         print'<button type="submot" name="add">追加</button>';
-        print '<button type="submit" name="edit">修正</button>';
         print '<button type="submit" name="delete">削除</button>';
         print "</form>";
     } catch (Exception $e) {

@@ -23,9 +23,10 @@ if ($image_title == '') {
   print '<br\>';
 }
 
-if (preg_match('/\A[0-9]+\z/', $image_description) == 0) {
+if ($image_description == '') {
   print '説明を入力てください。<br\/>';
 } else {
+  print '<br/>';
   print '説明:';
   print $image_description;
   print '<br/>';
@@ -35,13 +36,13 @@ if ($image_file['size'] > 0) {
   if ($image_file['size'] > 1000000) {
     print '画像が大きすぎます';
   } else {
-    move_uploaded_file($image_file['tmp_name'], './file/' . $image_file['name']);
-    print '<img src="./file/' . $image_file['name'] . '">';
+    move_uploaded_file($image_file['tmp_name'], './image/' . $image_file['name']);
+    print '<img src="./image/' . $image_file['name'] . '">';
     print '<br/>';
   }
 }
 
-if ($image_title == '' || preg_match('/\A[0-9]+\z/', $image_description) == 0 || $image_file['size'] > 1000000) {
+if ($image_title == '' ||  $image_description == '' || $image_file['size'] > 1000000) {
   print '<form>';
   print '<button type="button" onclick="history.back()">戻る</button>';
   print '</form>';

@@ -9,7 +9,7 @@
 <body>
     <?php
     try {
-        $image_code=$_GET['procode'];
+        $image_code=$_GET['imagecode'];
 
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = "root";
@@ -40,18 +40,17 @@
     }
     ?>
 
-    商品情報参照<br />
+    画像の表示<br />
     <br />
-    商品コード<br />
-    <?php print $image_code; ?>
-    <br />
-    商品名<br />
+    【タイトル】<br />
     <?php print $image_title; ?>
     <br />
-    価格<br />
+    【説明】<br />
+    <?php print $image_description; ?>
+    <br />
     <?php print $disp_file;?>
     <br>
-    <?php print $image_description; ?>円
+    <?php print $image_description; ?>
     <form>
 
         <input type="button" onclick="history.back()" value="戻る">

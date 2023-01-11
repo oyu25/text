@@ -10,7 +10,7 @@
 <body>
     <?php
     try {
-        $image_code = $_GET["procode"];
+        $image_code = $_GET["imagecode"];
 
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = "root";
@@ -41,12 +41,12 @@
     }
     ?>
 
-    商品削除<br />
+    画像の削除確認<br />
     <br />
-    商品コード<br />
+    【ID】<br />
     <?php print $image_code; ?>
     <br />
-    商品名<br/>
+    【タイトル】<br/>
     <?php print $image_title;?>
     <br/>
     <?php print $disp_file;?>

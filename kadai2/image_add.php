@@ -7,7 +7,8 @@
 </head>
 
 <body>
-
+    画像の登録</br>
+    </br>
     <form method="post" action="image_add_check.php" enctype="multipart/form-data">
         画像のタイトル
         <input type="text" name="title" style="width:200px"></br>

@@ -3,12 +3,12 @@
 
    <head>
     <mate charset="utf-8">
-    <title>ろくまる農業</title>
+    <title>課題２</title>
 
    </head>
 
   <body>
-  商品が選択されていません。<br/>
+  タイトルが入力されていません。<br/>
     <a href="image_list.php">戻る</a>
     
   </body>
