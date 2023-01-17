@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<link rel="stylesheet" href="image-list.css">
 
     <?php
     try {
@@ -30,7 +31,7 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="imagecode" value="'  . '">';
+            print '<input type="radio" name="imagecode" value="'  .$rec["id"]. '">';
             print $rec["title"].'---';
             print $rec['description'];
             print "<br/>";

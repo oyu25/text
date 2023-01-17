@@ -17,7 +17,7 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT title,description,file FROM image WHERE code=?";
+        $sql = "SELECT title,description,file FROM image WHERE id=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $image_code;
         $stmt->execute($data);
@@ -32,7 +32,7 @@
         if($image_file_name==''){
             $disp_file='';
         }else{
-            $disp_file='<img src="./file/'.$image_file_name.'">';
+            $disp_file='<img src="./image/'.$image_file_name.'">';
         }
     } catch (Exception $e) {
         print "ただいま障害により大変ご迷惑をお掛けしております。";
@@ -42,7 +42,7 @@
 
     画像の表示<br />
     <br />
-    【タイトル】<br />
+    【タイトル】
     <?php print $image_title; ?>
     <br />
     【説明】<br />
@@ -50,7 +50,7 @@
     <br />
     <?php print $disp_file;?>
     <br>
-    <?php print $image_description; ?>
+    
     <form>
 
         <input type="button" onclick="history.back()" value="戻る">

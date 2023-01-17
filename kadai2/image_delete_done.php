@@ -3,7 +3,7 @@
 
 <head>
     <mate charset="utf-8">
-        <title>ろくまる農業</title>
+        <title>課題2</title>
 </head>
 
 <body>
@@ -16,14 +16,14 @@
         $password = "";
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM image WHERE code=?";
+        $sql = "DELETE FROM image WHERE id=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $image_code;
         $stmt->execute($data);
         $dbh = null;
 
         if ($image_file_name != '') {
-            unlink('./file/' . $image_file_name);
+            unlink('./image/'.$image_file_name);
         }
     } catch (Exception $e) {
 

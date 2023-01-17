@@ -5,6 +5,7 @@
     <mate charset="utf-8">
         <title>課題2</title>
 </head>
+<link rel="stylesheet" href="image_add.css">
 
 <body>
     画像の登録</br>
