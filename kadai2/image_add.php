@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="image_add.css">
 
 <body>
-    画像の登録</br>
+    <h1>画像の登録</h1>
     </br>
     <form method="post" action="image_add_check.php" enctype="multipart/form-data">
         画像のタイトル
