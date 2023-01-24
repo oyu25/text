@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<link rel="stylesheet" href="image_add_check.css">
+
 <head>
   <mate charset="utf-8">
     <title>課題２</title>
-
 </head>
+<body>
+  <h1>確認</h1>
+
 <?php
 
 $image_title = $_POST['title'];
@@ -24,7 +28,7 @@ if ($image_title == '') {
 }
 
 if ($image_description == '') {
-  print '説明を入力てください。<br\/>';
+  print '説明を入力てください。<br/>';
 } else {
   print '<br/>';
   print '説明:';
@@ -59,7 +63,7 @@ if ($image_title == '' ||  $image_description == '' || $image_file['size'] > 100
 }
 ?>
 
-<body>
+
 
 </body>
 

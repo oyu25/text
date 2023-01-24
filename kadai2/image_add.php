@@ -11,14 +11,14 @@
     <h1>画像の登録</h1>
     </br>
     <form method="post" action="image_add_check.php" enctype="multipart/form-data">
-        <table border="1" height="200" cellpadding="10" align="center">
+        <table border="1" style="border-collapse: collapse" height="200" cellpadding="10" align="center">
             <tr>
                 <th>画像のタイトル</th>
-                <th><input type="text" name="title" style="width:400px"></br></th>
+                <th><input type="text" name="title" style="width:400px "></br></th>
 </tr>
                 <tr>
                     <th>画像の説明</th>
-                    <th><textarea cols="50" rows="5" name="description" style="width:400px;"></textarea></th>
+                    <th><textarea cols="50" rows="5" name="description" style="width:400px"></textarea></th>
                 </tr>
             <tr>
                 <th>画像ファイルの選択</th>

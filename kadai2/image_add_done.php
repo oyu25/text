@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+<link rel="stylesheet" href="image_add_done.css">
 
 <head>
     <mate charset="utf-8">

@@ -21,7 +21,7 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT id,title,description FROM image WHERE 1";
+        $sql = "SELECT id,title,description,file FROM image WHERE 1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -34,12 +34,32 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="imagecode" value="'  . $rec["id"] . '">';
-            print $rec["title"] ;
+            echo '<table border="1" style="border-collapse: collapse" align="center">';
+
+            echo '<tr>';
+            echo '<th>';
+            print '<input type="radio" name="imagecode" value="'  . $rec["id"] .   '">';
+            echo '</th>';
+
+            echo '<th>';
+            print $rec["id"];
+            echo '</th>';
+
+            echo '<th>';
+            print $rec["title"];
+            echo '</th>';
+            echo '</tr>';
+            echo '</table>';
+
+
             print "<br/>";
-        }
+        } ?>
+        
+        <img src="$disp_file" >
+
+    <?php
         print '<button type="submit" name="disp">参照</button>';
-        print '<button type="submot" name="add">追加</button>';
+        print '<button type="submit" name="add">追加</button>';
         print '<button type="submit" name="delete">削除</button>';
         print "</form>";
     } catch (Exception $e) {
