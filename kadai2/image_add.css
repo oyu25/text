@@ -7,11 +7,16 @@ h1 {
     text-align: center;
 }
 
-table th {
+div.button{
+    margin-left: 15%;
+    
+}
+
+/* table th {
     padding: 10px;
 }
 
 table td {
     padding: 3px 10px;
     
-}
+} */
