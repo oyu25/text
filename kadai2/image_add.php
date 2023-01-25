@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="image_add.css">
 
-<body>
+<body bgcolor="#f0ffff">
     <h1>画像の登録</h1>
     </br>
     <form method="post" action="image_add_check.php" enctype="multipart/form-data">

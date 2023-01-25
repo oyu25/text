@@ -6,7 +6,7 @@
         <title>課題2</title>
 </head>
 
-<body>
+<body bgcolor="#f0ffff">
     <?php
     try {
         $image_code = $_POST["code"];
@@ -23,7 +23,7 @@
         $dbh = null;
 
         if ($image_file_name != '') {
-            unlink('./image/'.$image_file_name);
+            unlink('./image/' . $image_file_name);
         }
     } catch (Exception $e) {
 

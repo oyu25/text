@@ -7,7 +7,7 @@
 
    </head>
 
-  <body>
+   <body bgcolor="#f0ffff">
   タイトルが入力されていません。<br/>
     <a href="image_list.php">戻る</a>
     

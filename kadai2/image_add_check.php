@@ -7,7 +7,7 @@
   <mate charset="utf-8">
     <title>課題２</title>
 </head>
-<body>
+<body bgcolor="#f0ffff">
   <h1>確認</h1>
 
 <?php
