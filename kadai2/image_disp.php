@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<link rel="stylesheet" href="image_disp.css">
+
 <head>
     <mate charset="utf-8">
         <title>課題2</title>
+        <h1>画像の表示</h1>
 </head>
 
 <body bgcolor="#f0ffff">
@@ -40,7 +43,7 @@
     }
     ?>
 
-    <h1>画像の表示</h1>
+
     <br />
     【タイトル】
     <?php print $image_title; ?>

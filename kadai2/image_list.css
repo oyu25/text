@@ -7,6 +7,20 @@ h1 {
     text-align: center;
 }
 
- body table div {
+table {
+    margin-top: 20px;
+}
+.images{
+    height: 50px;
+    width: 80%;
+    
+}
+
+div td {
     font-weight: bold;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
 }

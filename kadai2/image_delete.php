@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<link rel="stylesheet" href="image_delete.css">
+
 <head>
     <mate charset="utf-8">
         <title>課題2</title>
+        <h1>画像の削除確認</h1>
 
 </head>
+<link rel="stylesheet" href="image_delete.css">
 
 <body bgcolor="#f0ffff">
     
@@ -42,7 +46,7 @@
     }
     ?>
 
-    画像の削除確認<br />
+    
     <br />
     【ID】
     <?php print $image_code; ?>
