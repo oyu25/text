@@ -7,7 +7,7 @@
 
 </head>
 
-<body>
+<body bgcolor="#f0ffff">
     <?php
 
     if (isset($_POST["disp"]) == true) {
