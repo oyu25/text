@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="image_delete.css">
 
 <body bgcolor="#f0ffff">
-    
+
     <?php
     try {
         $image_code = $_GET["imagecode"];
@@ -46,7 +46,7 @@
     }
     ?>
 
-    
+
     <br />
     【ID】
     <?php print $image_code; ?>
@@ -54,7 +54,9 @@
     【タイトル】
     <?php print $image_title; ?>
     <br />
-    <?php print $disp_file; ?>
+    <div class="image">
+        <?php print $disp_file; ?>
+    </div>
     <br />
     このファイルを削除しますか?<br />
     <br />

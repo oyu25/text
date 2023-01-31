@@ -1,26 +1,20 @@
 @charset "utf-8";
+body{
+    margin: 0%;
+    padding: 0%;
+}
 
 h1 {
-    background-color: darkgreen;
-    color: #ffffff;
-    margin: 0%;
-    text-align: center;
+  background-color: darkgreen;
+  color: #ffffff;
+  text-align: center;
 }
 
-table {
-    margin-top: 20px;
-}
-.images{
-    height: 50px;
-    width: 80%;
-    
+td.gazou {
+  width: 150px;
+  height: 150px;
 }
 
-div td {
-    font-weight: bold;
-}
-
-body {
-    padding: 0%;
-    margin: 0%;
+.font {
+  font-weight: bold;
 }

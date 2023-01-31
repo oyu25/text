@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+<link rel="stylesheet" href="image_list.css">
 
 <head>
-    <link rel="stylesheet" href="image_list.css">
     <meta charset="utf-8">
 
     <title>課題２</title>
@@ -11,59 +11,58 @@
 
 
 <body bgcolor="#f0ffff">
-    <div class="font">
-        <table border="1" style="border-collapse: collapse" cellpadding="10" align="center">
+    <table border="1" style="border-collapse: collapse" cellpadding="10" align="center">
+        <div class="font">
 
             <td></td>
             <td>ID</td>
             <td>タイトル</td>
             <td>サムネタイトル</td>
-    </div>
+        </div>
 
+        <?php
+        try {
+            $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
+            $user = "root";
+            $password = "";
+            $dbh = new PDO($dsn, $user, $password);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            $sql = "SELECT id,title,description,file FROM image WHERE 1";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
 
-    <?php
-    try {
-        $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
-        $user = "root";
-        $password = "";
-        $dbh = new PDO($dsn, $user, $password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $dbh = null;
 
-        $sql = "SELECT id,title,description,file FROM image WHERE 1";
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
+            print "<form method='post' action='image_branch.php'>";
 
-        $dbh = null;
+            while (true) {
+                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        print "<form method='post' action='image_branch.php'>";
+                if ($rec == false) {
+                    break;
+                }
+        ?>
 
-        while (true) {
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($rec == false) {
-                break;
-            }
-    ?>
-            <div>
                 <tr>
+
                     <td><?php print '<input type="radio" name="imagecode" value="' . $rec['id'] . '">'; ?></td>
                     <td><?php print $rec['id'] . '<br\>'; ?></td>
                     <td><?php print $rec['title'] . '<br\>'; ?></td>
 
-                    <td><?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
+                    <td class="gazou"><?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
 
                 </tr>
-            </div>
-    <?php
-        }
-    } catch (Exception $e) {
 
-        print "ただいま障害により大変ご迷惑をおかけしております。";
-        print "<br/>" . $e->getMessage();
-        exit();
-    }
-    ?>
+        <?php
+            }
+        } catch (Exception $e) {
+
+            print "ただいま障害により大変ご迷惑をおかけしております。";
+            print "<br/>" . $e->getMessage();
+            exit();
+        }
+        ?>
     </table>
 
     <?php
