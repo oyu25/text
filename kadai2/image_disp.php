@@ -43,19 +43,20 @@
     }
     ?>
 
+    <div class="body">
 
-    <br />
-    【タイトル】
-    <?php print $image_title; ?>
-    <br />
-    【説明】<br />
-    <div class="moji">
-        <?php print $image_description; ?>
+        <br />
+        【タイトル】
+        <?php print $image_title; ?>
+        <br />
+        【説明】<br />
+        <div class="moji">
+            <?php print $image_description; ?>
+        </div>
+        <br />
+        <?php print $disp_file; ?>
+        <br>
     </div>
-    <br />
-    <?php print $disp_file; ?>
-    <br>
-
     <form>
 
         <input type="button" onclick="history.back()" value="戻る">

@@ -45,20 +45,21 @@
         exit();
     }
     ?>
+    <div class="body">
 
-
-    <br />
-    【ID】
-    <?php print $image_code; ?>
-    <br />
-    【タイトル】
-    <?php print $image_title; ?>
-    <br />
-    <div class="image">
-        <?php print $disp_file; ?>
+        <br />
+        【ID】
+        <?php print $image_code; ?>
+        <br />
+        【タイトル】
+        <?php print $image_title; ?>
+        <br />
+        <div class="image">
+            <?php print $disp_file; ?>
+        </div>
+        <br />
+        このファイルを削除しますか?<br />
     </div>
-    <br />
-    このファイルを削除しますか?<br />
     <br />
     <form method="post" action="image_delete_done.php">
         <input type="hidden" name="code" value="<?php print $image_code; ?>">

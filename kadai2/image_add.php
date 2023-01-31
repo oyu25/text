@@ -15,19 +15,21 @@
             <tr>
                 <th>画像のタイトル</th>
                 <th><input type="text" name="title" style="width:400px "></br></th>
-</tr>
-                <tr>
-                    <th>画像の説明</th>
-                    <th><textarea cols="50" rows="5" name="description" style="width:400px"></textarea></th>
-                </tr>
+            </tr>
+            <tr>
+                <th>画像の説明</th>
+                <th><textarea cols="50" rows="5" name="description" style="width:400px"></textarea></th>
+            </tr>
             <tr>
                 <th>画像ファイルの選択</th>
                 <th><input type="file" name="file" style="width: 400px"></br></th>
             </tr>
         </table>
         <div align="center">
-            <button type="button" onclick="history.back()">戻る</button>
-            <button type="submit">ＯＫ</button>
+            <div class="bu">
+                <button type="button" onclick="history.back()">戻る</button>
+                <button type="submit">ＯＫ</button>
+            </div>
         </div>
 
     </form>

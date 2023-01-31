@@ -10,10 +10,13 @@ h1 {
     text-align: center;
 }
 
-div.button{
-    margin-left: 15%;
-    
+.bu{
+    margin-top: 15%;
 }
+
+/* div.button{
+    margin-left: 15%;   
+} */
 
 /* table th {
     padding: 10px;

@@ -43,14 +43,13 @@
                     break;
                 }
         ?>
-
                 <tr>
-
                     <td><?php print '<input type="radio" name="imagecode" value="' . $rec['id'] . '">'; ?></td>
                     <td><?php print $rec['id'] . '<br\>'; ?></td>
                     <td><?php print $rec['title'] . '<br\>'; ?></td>
 
-                    <td class="gazou"><?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
+                    <td class="gazou">
+                        <?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
 
                 </tr>
 
@@ -67,11 +66,11 @@
 
     <?php
     echo "<div align='center'>";
+    print '<br>';
     print '<button type="submit" name="disp">参照</button>';
     print '<button type="submit" name="add">追加</button>';
     print '<button type="submit" name="delete">削除</button>';
-    print "</form>";
-    echo "<div/>"
+    echo "<div/>";
     ?>
 
 </body>
