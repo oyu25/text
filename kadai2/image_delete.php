@@ -64,8 +64,10 @@
     <form method="post" action="image_delete_done.php">
         <input type="hidden" name="code" value="<?php print $image_code; ?>">
         <input type="hidden" name="file_name" value="<?php print $image_file_name; ?>">
-        <button type="button" onclick="history.back()">戻る</button>
-        <button type="submit">ＯＫ</button>
+        <div class="bu">
+            <button type="button" onclick="history.back()">戻る</button>
+            <button type="submit">ＯＫ</button>
+        </div>
     </form>
 
 </body>

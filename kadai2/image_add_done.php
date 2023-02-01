@@ -25,7 +25,7 @@
         $user = "root";
         $password = "";
         $dbh = new PDO($dsn, $user, $password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
         $sql = "INSERT INTO image(title,description,file) VALUE(?,?,?)";
@@ -44,6 +44,8 @@
         print "ただいま障害により大変ご迷惑をおかけしております。";
         exit();
     }
+    header("location:done.php?mess=登録が完了しました。");
+
     ?>
 
     <a href="image_list.php">戻る</a>

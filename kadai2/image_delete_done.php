@@ -30,6 +30,7 @@
         print "ただいま障害により大変ご迷惑をおかけしております。";
         exit();
     }
+    // header("location:done.php?mess=登録が完了しました。");
     ?>
     削除しました。<br />
     <br />

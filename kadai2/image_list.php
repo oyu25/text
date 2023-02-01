@@ -12,14 +12,12 @@
 
 <body bgcolor="#f0ffff">
     <table border="1" style="border-collapse: collapse" cellpadding="10" align="center">
-        <div class="font">
 
             <td></td>
             <td>ID</td>
             <td>タイトル</td>
             <td>サムネタイトル</td>
-        </div>
-
+    
         <?php
         try {
             $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
@@ -43,15 +41,16 @@
                     break;
                 }
         ?>
-                <tr>
-                    <td><?php print '<input type="radio" name="imagecode" value="' . $rec['id'] . '">'; ?></td>
-                    <td><?php print $rec['id'] . '<br\>'; ?></td>
-                    <td><?php print $rec['title'] . '<br\>'; ?></td>
+                <div class="font">
+                    <tr>
+                        <td><?php print '<input type="radio" name="imagecode" value="' . $rec['id'] . '">'; ?></td>
+                        <td><?php print $rec['id'] . '<br\>'; ?></td>
+                        <td><?php print $rec['title'] . '<br\>'; ?></td>
 
-                    <td class="gazou">
-                        <?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
-
-                </tr>
+                        <td class="gazou">
+                            <?php print '<img class="images" src="./image/' . $rec['file'] . '">'; ?></td>
+                    </tr>
+                </div>
 
         <?php
             }
