@@ -4,6 +4,9 @@ body {
     padding: 0%;
     margin: 0%;
 }
+.body2{
+    margin-left: 3%;
+}
 
 h1{
     background-color: darkgreen;
@@ -11,3 +14,14 @@ h1{
     margin: 0%;
     text-align: center;
 }
+
+img{
+    max-width: 600px;
+}
+
+/* .tuika{
+    margin-top: 100%;
+} */
+/* .bu{
+    margin-left: 5%;
+} */
