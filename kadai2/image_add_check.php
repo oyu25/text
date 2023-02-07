@@ -64,7 +64,6 @@
           echo '</td>';
           echo '</tr>';
           print '<br/>';
-          
         }
       }
 
