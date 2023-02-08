@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="image_delete.css">
 
 <head>
-    <mate charset="utf-8">
+    <meta charset="utf-8">
         <title>課題2</title>
         <h1>画像の削除確認</h1>
 

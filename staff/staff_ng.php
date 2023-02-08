@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE thml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ろくまる農園</title>
+    </head>
+    <body>
 
-   <head>
-    <mate charset="utf-8">
-    <title>ろくまる農業</title>
-
-   </head>
-
-  <body>
-    スタッフが選択されていません。<br/>
-    <a href="list.php">戻る</a>
-    
-  </body>
-
+    スタッフが選択されていません。<br />
+    <a href="staff_list.php">戻る</a>
+        
+    </body>
 </html>

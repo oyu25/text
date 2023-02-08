@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <mate charset="utf-8">
+    <meta charset="utf-8">
         <title>修正</title>
 
 </head>

@@ -1,57 +1,64 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <mate charset="utf-8">
-        <title>ろくまる農業</title>
-
-</head>
-
-<body>
+<!DOCTYPE thml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ろくまる農園</title>
+    </head>
+    <body>
+        
     <?php
 
-    $code = $_POST['code'];
-    $name = $_POST['name'];
-    $pass = $_POST['pass'];
-    $pass2 = $_POST['pass2'];
+    $staff_code=$_POST['code'];
+    $staff_name=$_POST['name'];
+    $staff_pass=$_POST['pass'];
+    $staff_pass2=$_POST['pass2'];
 
-    $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-    $pass = htmlspecialchars($pass, ENT_QUOTES, 'UTF-8');
-    $pass2 = htmlspecialchars($pass2, ENT_QUOTES, 'UTF-8');
+    $staff_name=htmlspecialchars($staff_name,ENT_QUOTES,'UTF-8');
+    $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
+    $staff_pass2=htmlspecialchars($staff_pass2,ENT_QUOTES,'UTF-8');
 
-    if ($name == '') {
-        print 'スタッフ名が入力されていません。<br/>';
-    } else {
-        print 'スタッフ名:';
-        print $name;
-        print '<br/>';
+    if($staff_name=='')
+    {
+        print'スタッフ名が入力されていません。<br />';
+    }
+    else
+    {
+        print'スタッフ名';
+        print $staff_name;
+        print'<br />';
     }
 
-    if ($pass == '') {
-        print 'パスワードが入力されていません。<br/>';
+    if($staff_pass=='')
+    {
+        print'パスワードが入力されていません。<br />';
     }
 
-    if ($pass != $pass2) {
-        print 'パスワードが一致しません。<br/>';
+    if($staff_pass!==$staff_pass2)
+    {
+        print'パスワードが一致しません。<br />';
     }
 
-    if ($name == '' || $pass == '' || $pass !== $pass2) {
-        print '<form>';
-        print '<button type="button" onclick="history.back()戻る</button>';
-        print '</form>';
-    } else {
-        $pass = md5($pass);
-        print '<form method="post" action="edit_done.php">';
-        print '<input type="hidden" name="code"value="' . $code . '">';
-        print '<input type="hidden" name="name"value="' . $name . '">';
-        print '<input type="hidden" name="pass"value="' . $pass . '">';
-        print '<br/>';
-        print '<button type="button" onclick="history.back()">戻る</button>';
-        print '<button type="submit">ＯＫ</button>';
-        print '</form>';
+    if($staff_name==''||$staff_pass==''||$staff_pass!=$staff_pass2)
+    {
+        print'<form>';
+        print'<input type="button"onclick="history.back()"value="戻る">';
+        print'</form>';
     }
+    else
+    {
+        $staff_pass=md5($staff_pass);
+        print'<form method="post" action="staff_edit_done.php">';
+        print'<input type="hidden" name="code" value="'.$staff_code.'">';
+        print'<input type="hidden" name="name"value="'.$staff_name.'">';
+        print'<input type="hidden" name="pass"value="'.$staff_pass.'">';
+        print'<br />';
+        print'<input type="button"onclick="history.back()" value="戻る">';
+        print'<input type="submit"value="OK">';
+        print'</form>';
+
+    }
+
     ?>
 
-</body>
-
+    </body>
 </html>

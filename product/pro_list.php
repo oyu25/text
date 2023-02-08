@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <mate charset="utf-8">
+    <meta charset="utf-8">
         <title>ろくまる農業</title>
 
 </head>
@@ -49,6 +49,9 @@
         exit();
     }
     ?>
+
+    <br>
+    <a href="../staff_login/staff_top.php">トップメニュー</a><br/>
 
 </body>
 

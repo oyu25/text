@@ -1,55 +1,47 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php
 
-<head>
-    <mate charset="utf-8">
-        <title>ろくまる農業</title>
-
-</head>
-
-<body>
-    <?php
-
-    if (isset($_POST["disp"]) == true) {
-        if (isset($_POST["staffcode"]) == false) {
-
-
-            header("Location:ng.php");
-            exit();
-        }
-        $code = $_POST["staffcode"];
-        header("Location:disp.php?staffcode=" . $code);
+if(isset($_POST['disp'])==true)
+{
+    if(isset($_POST['staffcode'])==false)
+    {
+        header('Location: staff_ng.php');
         exit();
     }
+    $staff_code=$_POST['staffcode'];
+    header('Location: staff_disp.php?staffcode='.$staff_code);
+    exit();
+}
 
-    if (isset($_POST["add"]) == true) {
-        header("Location:add.php");
-    }
-    if (isset($_POST["edit"]) == true) {
-        // print"修正ボタンが押されました。";
+if(isset($_POST['add'])==true)
+{
+    header('Location: staff_add.php');
+    exit();
+}
 
-        if (isset($_POST["staffcode"]) == false) {
-            header("Location:ng.php");
-            exit();
-        }
-        $code = $_POST["staffcode"];
-        header("Location:edit.php?staffcode=" . $code);
+if(isset($_POST['edit'])==true)
+{
+    if(isset($_POST['staffcode'])==false)
+    {
+        header('Location: staff_ng.php');
         exit();
     }
+    $staff_code=$_POST['staffcode'];
+    header('Location: staff_edit.php?staffcode='.$staff_code);
+    exit();
+    print'修正ボタンが押された';
+}
 
-    if (isset($_POST["delete"]) == true) {
-        // print"削除ボタンが押されました。";
-
-        if (isset($_POST["staffcode"]) == false) {
-            header("Location:ng.php");
-            exit();
-        }
-        $code = $_POST["staffcode"];
-        header("Location:delete.php?staffcode=" . $code);
+if(isset($_POST['delete'])==true)
+{
+    if(isset($_POST['staffcode'])==false)
+    {
+        header('Location: staff_ng.php');
         exit();
     }
-    ?>
+    $staff_code=$_POST['staffcode'];
+    header('Location:staff_delete.php?staffcode='.$staff_code);
+    exit();
+    print'削除ボタンが押された';
+}
 
-</body>
-
-</html>
+?>

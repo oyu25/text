@@ -4,7 +4,7 @@
 <html lang="ja">
 
 <head>
-  <mate charset="utf-8">
+  <meta charset="utf-8">
     <title>個人表示</title>
 
 </head>

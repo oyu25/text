@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="image_add_check.css">
 
 <head>
-  <mate charset="utf-8">
+  <meta charset="utf-8">
     <title>課題２</title>
 </head>
 
