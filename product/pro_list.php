@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-        <title>ろくまる農業</title>
+    <title>ろくまる農業</title>
 
 </head>
 
@@ -11,17 +11,17 @@
 
     <?php
 
-session_start();
-session_regenerate_id(true);
-if (isset($_SESSION['login']) == false) {
-  print 'ログインされていません。<br/>';
-  print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
-  exit();
-}else{
-  print $_SESSION['staff_name'];
-  print'さんログイン中<br/>';
-  print'<br/>';
-}
+    session_start();
+    session_regenerate_id(true);
+    if (isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br/>';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
+        exit();
+    } else {
+        print $_SESSION['staff_name'];
+        print 'さんログイン中<br/>';
+        print '<br/>';
+    }
     try {
         $dsn = "mysql:dbname=shop;host=localhost;charset=utf8";
         $user = "root";
@@ -45,25 +45,25 @@ if (isset($_SESSION['login']) == false) {
                 break;
             }
             print '<input type="radio" name="procode" value="' . $rec['code'] . '">';
-            print $rec["name"].'---';
-            print $rec['price'].'円';
+            print $rec["name"] . '---';
+            print $rec['price'] . '円';
             print "<br/>";
         }
-        print'<button type="submit" name="disp">参照</button>';
-        print'<button type="submot" name="add">追加</button>';
+        print '<button type="submit" name="disp">参照</button>';
+        print '<button type="submot" name="add">追加</button>';
         print '<button type="submit" name="edit">修正</button>';
         print '<button type="submit" name="delete">削除</button>';
         print "</form>";
     } catch (Exception $e) {
 
         print "ただいま障害により大変ご迷惑をおかけしております。";
-        print"<br/>" .$e->getMessage();
+        print "<br/>" . $e->getMessage();
         exit();
     }
     ?>
 
     <br>
-    <a href="../staff_login/staff_top.php">トップメニュー</a><br/>
+    <a href="../staff_login/staff_top.php">トップメニュー</a><br />
 
 </body>
 

@@ -2,13 +2,13 @@
 session_start();
 session_regenerate_id(true);
 if (isset($_SESSION['login']) == false) {
-  print 'ログインされていません。<br/>';
-  print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
-  exit();
-}else{
-  print $_SESSION['staff_name'];
-  print'さんログイン中<br/>';
-  print'<br/>';
+    print 'ログインされていません。<br/>';
+    print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
+    exit();
+} else {
+    print $_SESSION['staff_name'];
+    print 'さんログイン中<br/>';
+    print '<br/>';
 }
 ?>
 
@@ -17,7 +17,7 @@ if (isset($_SESSION['login']) == false) {
 
 <head>
     <meta charset="utf-8">
-        <title>ろくまる農業</title>
+    <title>ろくまる農業</title>
 </head>
 
 <body>
@@ -29,9 +29,9 @@ if (isset($_SESSION['login']) == false) {
         価格を入力してください。<br />
         <input type="text" name="price" style="width:50px;"><br />
         <br />
-        画像を選んでください。<br/>
-        <input type="file" name="gazou" style="width: 400px"><br/>
-        <br/>
+        画像を選んでください。<br />
+        <input type="file" name="gazou" style="width: 400px"><br />
+        <br />
         <button type="button" onclick="history.back()">戻る</button>
         <button type="submit">ＯＫ</button>
 

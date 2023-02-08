@@ -3,25 +3,25 @@
 
 <head>
     <meta charset="utf-8">
-        <title>ろくまる農業</title>
+    <title>ろくまる農業</title>
 </head>
 
 <body>
     <?php
 
-session_start();
-session_regenerate_id(true);
-if (isset($_SESSION['login']) == false) {
-  print 'ログインされていません。<br/>';
-  print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
-  exit();
-}else{
-  print $_SESSION['staff_name'];
-  print'さんログイン中<br/>';
-  print'<br/>';
-}
+    session_start();
+    session_regenerate_id(true);
+    if (isset($_SESSION['login']) == false) {
+        print 'ログインされていません。<br/>';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
+        exit();
+    } else {
+        print $_SESSION['staff_name'];
+        print 'さんログイン中<br/>';
+        print '<br/>';
+    }
     try {
-        $pro_code=$_GET['procode'];
+        $pro_code = $_GET['procode'];
 
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = "root";
@@ -35,16 +35,16 @@ if (isset($_SESSION['login']) == false) {
         $stmt->execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-        $pro_name=$rec['name'];
-        $pro_price=$rec['price'];
-        $pro_gazou_name=$rec['gazou'];
+        $pro_name = $rec['name'];
+        $pro_price = $rec['price'];
+        $pro_gazou_name = $rec['gazou'];
 
         $dbh = null;
 
-        if($pro_gazou_name==''){
-            $disp_gazou='';
-        }else{
-            $disp_gazou='<img src="./gazou/'.$pro_gazou_name.'">';
+        if ($pro_gazou_name == '') {
+            $disp_gazou = '';
+        } else {
+            $disp_gazou = '<img src="./gazou/' . $pro_gazou_name . '">';
         }
     } catch (Exception $e) {
         print "ただいま障害により大変ご迷惑をお掛けしております。";
@@ -61,7 +61,7 @@ if (isset($_SESSION['login']) == false) {
     <?php print $pro_name; ?>
     <br />
     価格<br />
-    <?php print $disp_gazou;?>
+    <?php print $disp_gazou; ?>
     <br>
     <?php print $pro_price; ?>円
     <form>

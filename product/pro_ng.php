@@ -6,26 +6,26 @@ if (isset($_SESSION['login']) == false) {
   print 'ログインされていません。<br/>';
   print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
   exit();
-}else{
+} else {
   print $_SESSION['staff_name'];
-  print'さんログイン中<br/>';
-  print'<br/>';
+  print 'さんログイン中<br/>';
+  print '<br/>';
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 
-   <head>
-    <meta charset="utf-8">
-    <title>ろくまる農業</title>
+<head>
+  <meta charset="utf-8">
+  <title>ろくまる農業</title>
 
-   </head>
+</head>
 
-  <body>
-  商品が選択されていません。<br/>
-    <a href="pro_list.php">戻る</a>
-    
-  </body>
+<body>
+  商品が選択されていません。<br />
+  <a href="pro_list.php">戻る</a>
+
+</body>
 
 </html>

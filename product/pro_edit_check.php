@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-    <title>ろくまる農業</title>
+  <title>ろくまる農業</title>
 
 </head>
 <?php
@@ -14,10 +14,10 @@ if (isset($_SESSION['login']) == false) {
   print 'ログインされていません。<br/>';
   print '<a href="../staff_login/staff_login.html">ログイン画面へ<a/>';
   exit();
-}else{
+} else {
   print $_SESSION['staff_name'];
-  print'さんログイン中<br/>';
-  print'<br/>';
+  print 'さんログイン中<br/>';
+  print '<br/>';
 }
 
 $pro_code = $_POST['code'];

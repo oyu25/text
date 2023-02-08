@@ -51,5 +51,3 @@ if(isset($_POST['delete'])==true)
     exit();
     print'削除ボタンが押された';
 }
-
-?>
